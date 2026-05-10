@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: black;
+  color: white;
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Offset For Fixed Navbar */
+#home,
+#skills,
+#projects,
+#experience,
+#contact {
+  scroll-margin-top: 120px;
+}
+
+/* Loading Animation */
+@keyframes loading {
+
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+
+}
