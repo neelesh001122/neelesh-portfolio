@@ -1,5 +1,3 @@
-import resumePDF from "../../public/resume.pdf";
-
 function Resume() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-6">

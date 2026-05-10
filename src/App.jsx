@@ -13,6 +13,8 @@ import Footer from "./components/Footer";
 
 import BackgroundEffects from "./components/BackgroundEffects";
 
+import AIChat from "./components/AIChat";
+
 function App() {
 
   const [loading, setLoading] = useState(true);
@@ -106,6 +108,9 @@ function App() {
         </motion.footer>
 
       </main>
+
+      {/* AI Chatbot */}
+      <AIChat />
 
     </div>
 
