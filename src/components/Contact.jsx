@@ -1,10 +1,43 @@
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-} from "react-icons/fa";
+import { useRef } from "react";
+
+import emailjs from "@emailjs/browser";
 
 function Contact() {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_omvdf5o",
+      "template_qh1ifv4",
+      form.current,
+      "BUo15aDWWxftlfdVd"
+    )
+
+    .then(() => {
+
+      alert(
+        "Message Sent Successfully 🚀"
+      );
+
+      form.current.reset();
+
+    })
+
+    .catch((error) => {
+
+      console.log(error);
+
+      alert(
+        "Something went wrong ❌"
+      );
+
+    });
+
+  };
 
   return (
 
@@ -13,148 +46,80 @@ function Contact() {
       className="relative overflow-hidden px-6 pt-0 pb-24 text-white"
     >
 
-      <div className="relative z-10 mx-auto max-w-6xl">
+      <div className="relative z-10 mx-auto max-w-4xl">
 
         {/* Heading */}
         <div className="text-center">
 
           <p className="text-sm tracking-[4px] text-blue-400">
+
             LET'S CONNECT
+
           </p>
 
           <h2 className="mt-4 text-5xl font-black md:text-7xl">
+
             Contact Me
+
           </h2>
 
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-gray-400">
 
-            Open to opportunities in Data Analytics, AI, Automation,
-            and modern digital solutions.
+            Have a project, opportunity,
+            or collaboration idea?
+            Let’s build something amazing 🚀
 
           </p>
 
         </div>
 
-        {/* Contact Cards */}
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        {/* Contact Form */}
+        <div className="mt-20 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:p-12">
 
-          {/* Email */}
-          <a
-            href="mailto:neeleshdxn2u@gmail.com"
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-3"
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="space-y-6"
           >
 
-            {/* Glow */}
-            <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
+            {/* Name */}
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Your Name"
+              required
+              className="w-full rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-white outline-none transition duration-300 focus:border-blue-400 focus:bg-black/30"
+            />
 
-              <div className="absolute inset-0 bg-blue-500/10 blur-3xl" />
+            {/* Email */}
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Your Email"
+              required
+              className="w-full rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-white outline-none transition duration-300 focus:border-blue-400 focus:bg-black/30"
+            />
 
-            </div>
+            {/* Message */}
+            <textarea
+              name="message"
+              rows="7"
+              placeholder="Your Message"
+              required
+              className="w-full rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-white outline-none transition duration-300 focus:border-blue-400 focus:bg-black/30"
+            />
 
-            {/* Content */}
-            <div className="relative z-10">
+            {/* Button */}
+            <button
+              type="submit"
+              className="w-full rounded-2xl bg-linear-to-r from-blue-500 via-cyan-400 to-purple-500 px-8 py-4 font-semibold text-white shadow-lg shadow-blue-500/20 transition duration-300 hover:scale-[1.02]"
+            >
 
-              <div className="text-5xl text-blue-400">
+              Send Message 🚀
 
-                <FaEnvelope />
+            </button>
 
-              </div>
-
-              <h3 className="mt-6 text-2xl font-bold">
-
-                Email
-
-              </h3>
-
-              <p className="mt-4 break-all text-gray-400">
-
-                neeleshdxn2u@gmail.com
-
-              </p>
-
-            </div>
-
-          </a>
-
-          {/* LinkedIn */}
-          <a
-            href="https://linkedin.com/in/neelesh001122"
-            target="_blank"
-            rel="noreferrer"
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-3"
-          >
-
-            {/* Glow */}
-            <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
-
-              <div className="absolute inset-0 bg-cyan-500/10 blur-3xl" />
-
-            </div>
-
-            {/* Content */}
-            <div className="relative z-10">
-
-              <div className="text-5xl text-cyan-400">
-
-                <FaLinkedin />
-
-              </div>
-
-              <h3 className="mt-6 text-2xl font-bold">
-
-                LinkedIn
-
-              </h3>
-
-              <p className="mt-4 text-gray-400">
-
-                Connect Professionally
-
-              </p>
-
-            </div>
-
-          </a>
-
-          {/* GitHub */}
-          <a
-            href="https://github.com/neelesh001122"
-            target="_blank"
-            rel="noreferrer"
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-3"
-          >
-
-            {/* Glow */}
-            <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
-
-              <div className="absolute inset-0 bg-purple-500/10 blur-3xl" />
-
-            </div>
-
-            {/* Content */}
-            <div className="relative z-10">
-
-              <div className="text-5xl text-purple-400">
-
-                <FaGithub />
-
-              </div>
-
-              <h3 className="mt-6 text-2xl font-bold">
-
-                GitHub
-
-              </h3>
-
-              <p className="mt-4 text-gray-400">
-
-                Explore My Projects
-
-              </p>
-
-            </div>
-
-          </a>
+          </form>
 
         </div>
 

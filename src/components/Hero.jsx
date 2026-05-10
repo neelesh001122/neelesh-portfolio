@@ -5,6 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import {
   FaGithub,
   FaLinkedin,
+  FaEnvelope,
   FaBars,
   FaTimes,
 } from "react-icons/fa";
@@ -99,7 +100,6 @@ function Hero() {
           {/* Desktop Menu */}
           <ul className="hidden gap-8 text-base md:flex">
 
-            {/* Home */}
             <li>
               <a
                 href="#home"
@@ -113,7 +113,6 @@ function Hero() {
               </a>
             </li>
 
-            {/* Skills */}
             <li>
               <a
                 href="#skills"
@@ -127,7 +126,6 @@ function Hero() {
               </a>
             </li>
 
-            {/* Projects */}
             <li>
               <a
                 href="#projects"
@@ -141,7 +139,6 @@ function Hero() {
               </a>
             </li>
 
-            {/* Experience */}
             <li>
               <a
                 href="#experience"
@@ -155,7 +152,6 @@ function Hero() {
               </a>
             </li>
 
-            {/* Contact */}
             <li>
               <a
                 href="#contact"
@@ -314,39 +310,49 @@ function Hero() {
 
           </a>
 
-          {/* Resume Download */}
+          {/* Resume */}
           <a
-            href="/resume.pdf"
-            download
+            href="/resume"
             className="rounded-full border border-purple-500/30 bg-purple-500/10 px-8 py-4 text-base text-purple-300 transition duration-300 hover:scale-105 hover:border-purple-400 hover:bg-purple-500/20"
           >
 
-            Download Resume
+            Resume
 
           </a>
 
         </div>
 
         {/* Social Icons */}
-        <div className="mt-6 flex gap-6 text-4xl text-gray-300">
+        <div className="mt-8 flex gap-8 text-4xl text-gray-300">
 
+          {/* GitHub */}
           <a
             href="https://github.com/neelesh001122"
             target="_blank"
             rel="noreferrer"
           >
 
-            <FaGithub className="transition hover:text-blue-400" />
+            <FaGithub className="transition duration-300 hover:scale-110 hover:text-blue-400" />
 
           </a>
 
+          {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/neelesh001122"
             target="_blank"
             rel="noreferrer"
           >
 
-            <FaLinkedin className="transition hover:text-blue-400" />
+            <FaLinkedin className="transition duration-300 hover:scale-110 hover:text-cyan-400" />
+
+          </a>
+
+          {/* Email */}
+          <a
+            href="mailto:neeleshdxn2u@gmail.com"
+          >
+
+            <FaEnvelope className="transition duration-300 hover:scale-110 hover:text-purple-400" />
 
           </a>
 
