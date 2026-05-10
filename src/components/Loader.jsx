@@ -1,36 +1,37 @@
 function Loader() {
 
-return (
+  return (
 
     <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black text-white">
 
-    {/* Glow */}
-    <div className="absolute h-[300px] w-[300px] rounded-full bg-blue-500/20 blur-[120px]" />
+      {/* Soft Glow */}
+      <div className="absolute h-[220px] w-[220px] rounded-full bg-blue-500/10 blur-3xl" />
 
-    {/* Name */}
-    <h1 className="relative z-10 bg-linear-to-r from-blue-400 via-cyan-300 to-fuchsia-500 bg-clip-text text-5xl font-black text-transparent md:text-7xl animate-pulse">
+      {/* Name */}
+      <h1 className="relative z-10 bg-linear-to-r from-blue-400 via-cyan-300 to-fuchsia-500 bg-clip-text text-5xl font-black text-transparent md:text-7xl">
 
         NEELESH VERMA
 
-    </h1>
+      </h1>
 
-    {/* Subtitle */}
-    <p className="relative z-10 mt-6 text-lg tracking-[4px] text-gray-400">
+      {/* Subtitle */}
+      <p className="relative z-10 mt-5 text-sm tracking-[5px] text-gray-400 md:text-base">
 
         BUILDING THE FUTURE WITH AI
 
-    </p>
+      </p>
 
-    {/* Loading Bar */}
-    <div className="relative z-10 mt-10 h-1 w-60 overflow-hidden rounded-full bg-white/10">
+      {/* Loading Bar */}
+      <div className="relative z-10 mt-8 h-1 w-56 overflow-hidden rounded-full bg-white/10">
 
-        <div className="h-full w-full animate-[loading_2s_linear_forwards] bg-linear-to-r from-blue-400 to-fuchsia-500" />
+        <div className="h-full w-full animate-[loading_1.5s_linear_forwards] bg-linear-to-r from-blue-400 to-fuchsia-500" />
+
+      </div>
 
     </div>
 
-    </div>
+  );
 
-);
 }
 
 export default Loader;

@@ -15,8 +15,7 @@ import BackgroundEffects from "./components/BackgroundEffects";
 
 function App() {
 
-  const [loading, setLoading] =
-    useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
 
@@ -24,7 +23,7 @@ function App() {
 
       setLoading(false);
 
-    }, 2500);
+    }, 1200);
 
     return () => clearTimeout(timer);
 
@@ -32,80 +31,81 @@ function App() {
 
   return (
 
-    <div className="relative min-h-screen overflow-hidden text-white">
+    <div className="relative min-h-screen overflow-x-hidden bg-black text-white">
 
       {/* Loader */}
       {loading && <Loader />}
 
-      {/* Global Background */}
+      {/* Background */}
       <BackgroundEffects />
 
       {/* Main Content */}
-      <div className="relative z-10">
+      <main className="relative z-10">
 
+        {/* Hero */}
         <Hero />
 
         {/* Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 70 }}
+        <motion.section
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 0.8 }}
         >
 
           <Skills />
 
-        </motion.div>
+        </motion.section>
 
         {/* Projects */}
-        <motion.div
-          initial={{ opacity: 0, y: 70 }}
+        <motion.section
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 0.8 }}
         >
 
           <Projects />
 
-        </motion.div>
+        </motion.section>
 
         {/* Experience */}
-        <motion.div
-          initial={{ opacity: 0, y: 70 }}
+        <motion.section
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 0.8 }}
         >
 
           <Experience />
 
-        </motion.div>
+        </motion.section>
 
         {/* Contact */}
-        <motion.div
-          initial={{ opacity: 0, y: 70 }}
+        <motion.section
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 0.8 }}
         >
 
           <Contact />
 
-        </motion.div>
+        </motion.section>
 
         {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0, y: 70 }}
+        <motion.footer
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 0.8 }}
         >
 
           <Footer />
 
-        </motion.div>
+        </motion.footer>
 
-      </div>
+      </main>
 
     </div>
 
