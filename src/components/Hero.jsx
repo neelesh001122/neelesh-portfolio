@@ -312,7 +312,7 @@ function Hero() {
 
           {/* Resume */}
           <a
-            href="/resume"
+            href="/resume.pdf"
             className="rounded-full border border-purple-500/30 bg-purple-500/10 px-8 py-4 text-base text-purple-300 transition duration-300 hover:scale-105 hover:border-purple-400 hover:bg-purple-500/20"
           >
 
