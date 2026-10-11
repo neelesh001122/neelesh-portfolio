@@ -24,7 +24,7 @@ function Projects() {
       color: "cyan",
 
       github:
-        "https://github.com/neelesh001122",
+        "https://github.com/neelesh001122/road-accident-dashboard",
     },
 
     {
